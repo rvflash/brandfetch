@@ -1,0 +1,27 @@
+linters-settings:
+  gci:
+    sections:
+      - standard
+      - prefix(github.com)
+
+linters:
+  enable-all: true
+  disable:
+    - exhaustivestruct
+    - exhaustruct
+    - goerr113
+    - nlreturn
+    - varnamelen
+    - wsl
+
+issues:
+  exclude-use-default: false
+  exclude-rules:
+    - linters:
+        - lll
+      source: "^//go:generate "
+
+    # temporary "fix" waiting for https://github.com/kunwardeep/paralleltest/issues/14.
+    - linters:
+        - paralleltest
+      text: "does not use range value in test Run"

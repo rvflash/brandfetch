@@ -101,7 +101,7 @@ func (c *Client) BrandsByName(ctx context.Context, name string) ([]Brand, error)
 	if err != nil {
 		return nil, fmt.Errorf("%w: %s", ErrResponse, err)
 	}
-	return res, err
+	return res, nil
 }
 
 func (c *Client) ready(ctx context.Context) error {
