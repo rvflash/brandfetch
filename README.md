@@ -5,8 +5,9 @@
 [![Code Coverage](https://codecov.io/gh/rvflash/brandfetch/branch/master/graph/badge.svg)](https://codecov.io/gh/rvflash/brandfetch)
 [![Go Report Card](https://goreportcard.com/badge/github.com/rvflash/brandfetch?)](https://goreportcard.com/report/github.com/rvflash/brandfetch)
 
-Golang interface for the Brandfetch API.
-This package begins using a v2 tag to follow the API, so the module name is `github.com/rvflash/brandfetch/v2`. 
+Unofficial Golang interface for the [Brandfetch](https://brandfetch.com/) API.
+
+This package starts with the v2 tag to follow the API, see the module name. 
 
 ### Installation
 
@@ -14,7 +15,7 @@ This package begins using a v2 tag to follow the API, so the module name is `git
 $ go get -u github.com/rvflash/brandfetch/v2
 ```
 
-Requirement: this package uses the `url.JoinPath` function incoming with the Golang version 1.19.
+Requirement: this package uses the `url.JoinPath` function incoming with Golang 1.19.
 
 ### Usage
 
