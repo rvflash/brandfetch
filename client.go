@@ -1,3 +1,7 @@
+// Copyright (c) 2022 Hervé Gouchet. All rights reserved.
+// Use of this source code is governed by the MIT License
+// that can be found in the LICENSE file.
+
 package brandfetch
 
 import (
@@ -8,6 +12,7 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"strings"
 	"time"
 )
 
@@ -75,6 +80,9 @@ func (c *Client) BrandsByName(ctx context.Context, name string) ([]Brand, error)
 	if err != nil {
 		return nil, err
 	}
+	if name = strings.TrimSpace(name); name == "" {
+		return nil, fmt.Errorf("%w: missing query", ErrRequest)
+	}
 	uri, err := url.JoinPath(apiURL, searchEndpoint, name)
 	if err != nil {
 		return nil, fmt.Errorf("%w: %s", ErrRequest, err)
@@ -115,7 +123,6 @@ func (c *Client) ready(ctx context.Context) error {
 }
 
 const (
-	https = "https"
 	// timeout is the default time limit for requests made by the HTTP Client.
 	timeout = 10 * time.Second
 	// keepAlive specifies the default interval between keep-alive probes for an active network connection.
@@ -138,11 +145,7 @@ func newHTTPClient() *http.Client {
 		},
 		Timeout: timeout,
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
-			if len(via) > 0 && via[0].URL.Scheme == https && req.URL.Scheme != https {
-				lastURL := via[len(via)-1].URL
-				return fmt.Errorf("redirected from secure rawURL %s to insecure rawURL %s", lastURL, req.URL)
-			}
-			return nil
+			return http.ErrUseLastResponse
 		},
 	}
 }

@@ -1,0 +1,21 @@
+[
+  {
+    "claimed" : false,
+    "name" : "Example",
+    "domain" : "example.com",
+    "icon" : null
+  },
+  {
+    "claimed" : false,
+    "name" : "Examples",
+    "domain" : "examples.com",
+    "icon" : "https://asset.brandfetch.io/idnt7TCUjo/idREMYWRWm_s.webp"
+  },
+  {
+    "claimed" : false,
+    "name" : null,
+    "domain" : "example-sentences.com",
+    "icon" : "https://asset.brandfetch.io/idTipDPkyD/idZpkiw4k1_s.webp"
+  }
+]
+
