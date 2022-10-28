@@ -1,6 +1,6 @@
 # Brandfetch
 
-[![GoDoc](https://godoc.org/github.com/rvflash/brandfetch?status.svg)](https://godoc.org/github.com/rvflash/brandfetch)
+[![GoDoc](https://godoc.org/github.com/rvflash/brandfetch/v2?status.svg)](https://godoc.org/github.com/rvflash/brandfetch/v2)
 [![Build Status](https://github.com/rvflash/brandfetch/workflows/build/badge.svg)](https://github.com/rvflash/brandfetch/actions?workflow=build)
 [![Code Coverage](https://codecov.io/gh/rvflash/brandfetch/branch/main/graph/badge.svg)](https://codecov.io/gh/rvflash/brandfetch)
 [![Go Report Card](https://goreportcard.com/badge/github.com/rvflash/brandfetch/v2?)](https://goreportcard.com/report/github.com/rvflash/brandfetch/v2)
